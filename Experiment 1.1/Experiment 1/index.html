@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bank">
+    <h2>Balance: <span id="bal">$1000</span></h2>
+    <input type="number" id="amt" placeholder="Enter amount" min="0">
+    <div class="btns">
+      <button onclick="dep()">Deposit</button>
+      <button onclick="wd()">Withdraw</button>
+    </div>
+    <p id="msg"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
