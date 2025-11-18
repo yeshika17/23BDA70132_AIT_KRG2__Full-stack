@@ -1,0 +1,33 @@
+import React, { useState } from "react";
+
+export default function EmployeeFilter() {
+  const employees = ["Amit", "Anjali", "Rohit", "Riya", "Sameer", "Sakshi", "Pooja", "Priya"]; // sample names
+
+  const [query, setQuery] = useState("");
+
+  const filteredEmployees = employees.filter((name) =>
+    name.toLowerCase().startsWith(query.toLowerCase())
+  );
+
+  return (
+    <div className="p-6 max-w-md mx-auto">
+      <h1 className="text-2xl font-bold mb-4">Employee List</h1>
+
+      <input
+        type="text"
+        placeholder="Search by starting letter..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        className="w-full p-2 border rounded mb-4"
+      />
+
+      <ul className="space-y-2">
+        {filteredEmployees.map((name, index) => (
+          <li key={index} className="p-2 bg-gray-100 rounded">
+            {name}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
